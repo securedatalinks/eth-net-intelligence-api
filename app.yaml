@@ -1,0 +1,44 @@
+kind: Deployment
+apiVersion: extensions/v1beta1
+metadata:
+  name: eth-net-intelligence
+  labels:
+    run: eth-net-intelligence
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: eth-net-intelligence
+  template:
+    metadata:
+      labels:
+        run: eth-net-intelligence
+    spec:
+      containers:
+      - name: eth-net-intelligence
+        image: gcr.io/vigeo-255803/eth-net-intelligence:latest
+        args: [
+        ]
+        imagePullPolicy: Always
+        ports:
+        - name: http
+          containerPort: 3000
+          protocol: TCP
+...
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: eth-net-intelligence
+  labels:
+    run: eth-net-intelligence
+spec:
+  ports:
+  - name: default
+    port: 3000
+    protocol: TCP
+    targetPort: 3000
+  selector:
+    run: eth-net-intelligence
+  type: LoadBalancer
+...

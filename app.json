@@ -11,13 +11,39 @@
     "env":
     {
       "NODE_ENV"        : "production",
-      "RPC_HOST"        : "localhost",
+      "RPC_HOST"        : "34.71.43.141",
       "RPC_PORT"        : "8545",
-      "LISTENING_PORT"  : "30303",
-      "INSTANCE_NAME"   : "",
+      "LISTENING_PORT"  : "XXX",
+      "INSTANCE_NAME"   : "SDL COR chainlink pipeline",
       "CONTACT_DETAILS" : "",
-      "WS_SERVER"       : "wss://rpc.ethstats.net",
-      "WS_SECRET"       : "see http://forum.ethereum.org/discussion/2112/how-to-add-yourself-to-the-stats-dashboard-its-not-automatic",
+      "WS_SERVER"       : "ws://127.0.0.1:3000",
+      "WS_SERVER"       : "ws://35.188.22.247:3000",
+      
+      "WS_SECRET"       : "abrakadabra",
+      "VERBOSITY"       : 2
+    }
+  },
+  {
+    "name"              : "node-app",
+    "script"            : "app.js",
+    "log_date_format"   : "YYYY-MM-DD HH:mm Z",
+    "merge_logs"        : false,
+    "watch"             : false,
+    "max_restarts"      : 10,
+    "exec_interpreter"  : "node",
+    "exec_mode"         : "fork_mode",
+    "env":
+    {
+      "NODE_ENV"        : "production",
+      "RPC_HOST"        : "34.71.43.141",
+      "RPC_PORT"        : "8545",
+      "LISTENING_PORT"  : "XXX",
+      "INSTANCE_NAME"   : "INFURA free tier",
+      "CONTACT_DETAILS" : "",
+      "WS_SERVER"       : "ws://127.0.0.1:3000",
+      "WS_SERVER"       : "ws://35.188.22.247:3000",
+      
+      "WS_SECRET"       : "abrakadabra",
       "VERBOSITY"       : 2
     }
   }
